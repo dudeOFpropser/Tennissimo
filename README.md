@@ -1,3 +1,3 @@
 ## tennissimo
 
-### Hello, wrold!
+### Hello, world!
