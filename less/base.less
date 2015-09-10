@@ -1,7 +1,51 @@
-body {
-    background: #4D9C46;
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic);
 
+@tennisGreen: #4D9C46;
+@tennisWhite: #dddddd;
+
+@tennisFont: 'Roboto Mono', Arial, serif;
+@tennisFontColor: #000000; //like my soul
+
+body {
+    background: @tennisGreen;
+    display: flex; 
+    flex-flow: row wrap;
+    font-color: @tennisFontColor;
+    font-family: @tennisFont;
+}
+
+/* Header LESS */
+header {
+    flex: 1 100%;
+    
     h1.title {
-        color: #fff;
+        color: @tennisWhite;
+        text-align: center;
+    }
+}
+
+section.content {
+    background: #fff;
+    padding: 2% 10%;
+    width: 100%;
+
+    table#tennisTable {
+        width: 100%;
+
+        tbody {
+            td {
+                text-align: center;
+            }
+        }
+    }
+}
+/* Footer LESS */
+footer {
+    color: @tennisWhite;
+    flex: 1 100%;
+    text-align: center; 
+
+    a {
+        color: @tennisFontColor;
     }
 }
