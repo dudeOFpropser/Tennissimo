@@ -1,1 +1,1 @@
-body{background:#4d9c46}body h1.title{color:#fff}
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic);body{background:#4d9c46;color:#ddd;display:flex;flex-flow:row wrap;font-color:#000;font-family:'Roboto Mono',Arial,serif;padding:10px}header{flex:1 100%}header h1.title{text-align:center}footer{flex:1 100%;text-align:center}footer a{color:#000}
