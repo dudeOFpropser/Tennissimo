@@ -8,12 +8,10 @@
 
 body {
     background: @tennisGreen;
-    color: @tennisWhite;
     display: flex; 
     flex-flow: row wrap;
     font-color: @tennisFontColor;
     font-family: @tennisFont;
-    padding: 10px;
 }
 
 /* Header LESS */
@@ -21,11 +19,19 @@ header {
     flex: 1 100%;
     
     h1.title {
+        color: @tennisWhite;
         text-align: center;
     }
 }
+
+section.content {
+    background: #fff;
+    padding: 0px 10%;
+    width: 100%;
+}
 /* Footer LESS */
 footer {
+    color: @tennisWhite;
     flex: 1 100%;
     text-align: center; 
 
