@@ -6,11 +6,12 @@
 
         <link href="css/base.css" rel="stylesheet"></link>
         <link href="css/normalize.css" rel="stylesheet"></link>
+        <link href="css/modal.css" rel="stylesheet"></link>
     </head>
     <body> 
         <header>
             <h1 class="title"> Welcome to Tennissimo </h1>
-            <button> Add Game </button>
+            <a href="#modal-text"> Add Game </a>
         </header>
         <section class="content">
             <table id="tennisTable" border="1" cellpadding="10">
@@ -24,6 +25,33 @@
                     </tr>
                 </thead>
             </table>
+        </section>
+        <section class="modal--show" id="modal-text" tabindex="-1"
+        role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+            <div class="modal-inner">
+                <header id="modal-label">Add Game</header>
+                <div class="modal-content"><
+                    <form> 
+                        <label for="player1">Player 1
+                        <input type="text" id="player1"> </input></label>
+
+                        <label for="player2">Player 2
+                        <input type="text" id="player2"> </input> </label>
+
+                        <label for="winner">Winner
+                        <input type="text" id="winner"></input> </label>
+
+                        <label for="score">Score
+                        <input type="text" id="score"></input></label> 
+
+                    </form>
+                </div>
+                <footer><!-- Footer --></footer>
+            </div>
+
+            <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+                data-dismiss="modal">?</a>
         </section>
         <footer>
             <p> Created by @bill_pond. Special thanks to <a href="http://jordanscales.com/">@jdan</a> for both the name of this product and <b>0</b> days of friendship. </p>

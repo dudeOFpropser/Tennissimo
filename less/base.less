@@ -27,13 +27,16 @@ header {
         width:100%;
     }
 
-    button {
+    a {
+        border: 1px solid @tennisFontColor;
+        background-color: @tennisWhite;
+        color: @tennisFontColor;
         float: right;
+        padding:  5px 10px;
         position: absolute;
         right: 40px;
         top: 30px;
-        border: 1px solid @tennisFontColor;
-        background-color: @tennisWhite;
+        text-decoration: none;
     }
 }
 
@@ -49,6 +52,16 @@ section.content {
             td {
                 text-align: center;
             }
+        }
+    }
+}
+
+/* Modal */
+
+.modal-content {
+    form {
+        label {
+            display: block; 
         }
     }
 }
