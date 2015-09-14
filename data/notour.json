@@ -1,1 +1,9 @@
-{}
+[
+    {
+        "id":       "1",
+        "player1":  "Bill",
+        "player2":  "Jordan", 
+        "winner": "Bill",
+        "score": "20-2"
+    }
+]

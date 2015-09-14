@@ -16,8 +16,8 @@ app.get('/', function (req, res) {
 
 app.post('/additem', function (req, res, next) {
     var fileName = "./data/notour.json";
-    console.log('body: ' + JSON.stringify(req.body));
-    fs.writeFileSync(fileName, JSON.stringify(req.body));
+    console.log(req.body);
+    //fs.writeFileSync(fileName, req.body);
     res.send(fileName);
 });
 
