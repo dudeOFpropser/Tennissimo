@@ -4,7 +4,7 @@
   "description": "Tennis App for people with Tennis Friends.",
   "main": "Gruntfile.js",
   "scripts": {
-    "install": "npm install grunt grunt-contrib-less grunt-contrib-watch jit-grunt --save-dev",
+    "install": "npm install grunt grunt-contrib-less grunt-contrib-watch jit-grunt express grunt-express-server --save-dev",
     "test": "grunt"
   },
   "repository": {
@@ -26,6 +26,10 @@
     "grunt": "^0.4.5",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.5.1",
     "jit-grunt": "^0.9.1"
+  },
+  "dependencies": {
+    "jsonfile": "^2.2.1"
   }
 }

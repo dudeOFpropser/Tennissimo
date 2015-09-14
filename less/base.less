@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic);
 
+@buttonColor: #fff;
 @gutters: 40px;
 @tennisGreen: #4D9C46;
 @tennisWhite: #dddddd;
@@ -29,7 +30,8 @@ header {
 
     a {
         border: 1px solid @tennisFontColor;
-        background-color: @tennisWhite;
+        background-color: @buttonColor;
+        border-radius: 5px;
         color: @tennisFontColor;
         float: right;
         padding:  5px 10px;
@@ -42,6 +44,7 @@ header {
 
 section.content {
     background: #fff;
+    height: 75vw;
     padding: 2% 10%;
     width: 100%;
 
@@ -60,8 +63,15 @@ section.content {
 
 .modal-content {
     form {
-        label {
-            display: block; 
+        input[type="text"] {
+            display: inline-block; 
+            width: 48.2%;
+        }
+        input[type="submit"] {
+            background-color: @buttonColor;
+            border-radius: 5px;
+            float: right; 
+            margin-top: 30px;
         }
     }
 }
