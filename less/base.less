@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic);
 
+@buttonColor: #fff;
+@gutters: 40px;
 @tennisGreen: #4D9C46;
 @tennisWhite: #dddddd;
 
@@ -17,15 +19,32 @@ body {
 /* Header LESS */
 header {
     flex: 1 100%;
+    padding: 0px @gutters; 
     
     h1.title {
         color: @tennisWhite;
+        display: inline-block;
         text-align: center;
+        width:100%;
+    }
+
+    a {
+        border: 1px solid @tennisFontColor;
+        background-color: @buttonColor;
+        border-radius: 5px;
+        color: @tennisFontColor;
+        float: right;
+        padding:  5px 10px;
+        position: absolute;
+        right: 40px;
+        top: 30px;
+        text-decoration: none;
     }
 }
 
 section.content {
     background: #fff;
+    height: 75vw;
     padding: 2% 10%;
     width: 100%;
 
@@ -39,10 +58,28 @@ section.content {
         }
     }
 }
+
+/* Modal */
+
+.modal-content {
+    form {
+        input[type="text"] {
+            display: inline-block; 
+            width: 48.2%;
+        }
+        input[type="submit"] {
+            background-color: @buttonColor;
+            border-radius: 5px;
+            float: right; 
+            margin-top: 30px;
+        }
+    }
+}
 /* Footer LESS */
 footer {
     color: @tennisWhite;
     flex: 1 100%;
+    padding: 0px @gutters; 
     text-align: center; 
 
     a {

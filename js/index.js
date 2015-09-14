@@ -6,7 +6,7 @@ $(document).ready(function(){
 }); 
 
 function buildTable(){
-    $.getJSON( "http://localhost:8000/data/notour.json", function( data ) {
+    $.getJSON( "/data/notour.json", function( data ) {
         var tbody = $("<tbody />"); 
         for(var i = 0; i < data.length; i++) {
             var row = $("<tr />");
