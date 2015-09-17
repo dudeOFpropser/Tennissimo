@@ -2,45 +2,44 @@ $(document).ready(function(){
     var friendshipDays = getFriendshipDays(); 
     $('footer p b').html(friendshipDays);
 
-    buildTable();
+    $.getJSON( "/data/notour.json", function( data ) {
+        buildTable(data);
+    });
 }); 
 
-function buildTable(){
+function buildTable(data){
+    var tbody = $("<tbody />"); 
+    if(data != null && data.length > 0){
+        for(var i = 0; i < data.length; i++) {
+            var row = $("<tr />");
+            row.html("<td>"+data[i].id+"</td>"+
+                "<td>"+data[i].player1+"</td>"+
+                "<td>"+data[i].player2+"</td>"+
+                "<td>"+data[i].winner+"</td>"+
+                "<td>"+data[i].score+"</td>"); 
 
-    $.getJSON( "/data/notour.json", function( data ) {
-        var tbody = $("<tbody />"); 
-
-        if(data != null && data.length > 0){
-            for(var i = 0; i < data.length; i++) {
-                var row = $("<tr />");
-                row.html("<td>"+data[i].id+"</td>"+
-                    "<td>"+data[i].player1+"</td>"+
-                    "<td>"+data[i].player2+"</td>"+
-                    "<td>"+data[i].winner+"</td>"+
-                    "<td>"+data[i].score+"</td>"); 
-
-                row.appendTo(tbody);
-            }
-            var $tennisTable = $('#tennisTable');
-            tbody.appendTo($tennisTable);
+            row.appendTo(tbody);
         }
-        else{
-            $("<h1> There are currently no tennis games! </h1>").insertBefore("#tennisTable");
-            $("#tennisTable").hide(); 
-        }
-    }); 
+        var $tennisTable = $('#tennisTable');
+        tbody.appendTo($tennisTable);
+    }
+    else{
+        $("<h1> There are currently no tennis games! </h1>").insertBefore("#tennisTable");
+        $("#tennisTable").hide(); 
+    }
 }
 
 function addGame() {
-    var content = {"id":"1","player1":"Bill","player2":"Jordan","winner":"Bill","score": "20-2"};
-
+    var content =[{"id":"1","player1":"Bill","player2":"Jordan","winner":"Bill","score": "20-4"}];
     $.ajax({
         type: 'POST',
-        data: content,
+        data: {"data": JSON.stringify(content)},
         url: '/additem',                      
         success: function(data) {
-            console.log('success');
-            console.log(JSON.stringify(data));
+            buildTable(JSON.parse(data));
+        },
+        error: function(){
+            console.log("Add Game Failed");
         }
     });
 }
