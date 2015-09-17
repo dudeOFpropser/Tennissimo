@@ -21,6 +21,7 @@ function buildTable(data){
             row.appendTo(tbody);
         }
         var $tennisTable = $('#tennisTable');
+        $tennisTable.find('tbody').empty(); //Remove all "outdated data"
         tbody.appendTo($tennisTable);
     }
     else{
@@ -35,7 +36,7 @@ function addGame() {
         type: 'POST',
         data: {"data": JSON.stringify(content)},
         url: '/additem',                      
-        success: function(data) {
+        success: function(data) {            
             buildTable(JSON.parse(data));
         },
         error: function(){

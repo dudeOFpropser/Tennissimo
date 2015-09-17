@@ -17,14 +17,18 @@ app.get('/', function (req, res) {
 
 app.post('/additem', function (req, res, next) {
     var fileName = "./data/notour.json";
-    console.log(req.body.data);
-    fs.writeFile(fileName, req.body.data);
-    
     var contents = "";
+
     fs.exists(fileName, function(fileok){
         if(fileok)fs.readFile(fileName, function(error, data) {
+            //Currently have old data
             contents = data;
             console.log("Contents: " + data);
+
+            //new data needs to be sent
+            fs.writeFile(fileName, data);
+
+            //send all data to front end
             res.send(contents);
             return; 
         });
